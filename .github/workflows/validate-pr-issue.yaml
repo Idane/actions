@@ -8,7 +8,7 @@ jobs:
     name: PR has linked issues
     permissions:
       issues: read
-      pull-requests: read
+      pull-requests: write
     steps:
       - uses: nearform-actions/github-action-check-linked-issues@v1
         id: check-linked-issues
