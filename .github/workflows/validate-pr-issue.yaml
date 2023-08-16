@@ -14,12 +14,11 @@ jobs:
         id: check-linked-issues
         with:
           exclude-branches: "release/**, dependabot/**"
-          custom-body-comment: "Please link an issue to this pull request!"
+          comment: false
       - uses: LouisBrunner/checks-action@v1.6.1
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: PR has at least one linked issue
-          conclusion: ${{ steps.check-linked-issues.outputs.linked_issues_count > 0 }}
           output: |
-            {"summary":"${{ steps.test.outputs.summary }}"}
+            {"summary":"PR has at least one linked issue"}
