@@ -20,5 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: PR has at least one linked issue
+          conclusion: ${{ job.status }}
           output: |
             {"summary":"PR has at least one linked issue"}
